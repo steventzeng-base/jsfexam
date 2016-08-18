@@ -11,10 +11,11 @@
         <title>Edit User</title>
     </h:head>
     <h:body>
-        <h:outputText id="showName">#{editUserView2.editUser.name}</h:outputText>
+        <h:outputText id="isChange" value="#{editUserView2.changeUserName}"/>
+        <h:outputText id="showName" value="#{editUserView2.editUser.name}"/>
         <h:form>
             user name<h:inputText value="#{editUserView2.editUser.name}">
-                <f:ajax render="showName"/>
+                <f:ajax render="showName isChange"/>
             </h:inputText><br />
             user password<h:inputText value="#{editUserView2.editUser.password}"/>
             <h:commandButton action="#{editUserView2.editDone()}" value="Done">
