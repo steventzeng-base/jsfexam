@@ -10,13 +10,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.enterprise.context.Dependent;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author steven
  */
-@Dependent
+@Stateless
 public class UserService {
 
     public List<User> findByName(String name) {
@@ -28,5 +28,9 @@ public class UserService {
                 new User("user4", "xxxx"),
                 new User("user5", "oooo")
         );
+    }
+
+    public User getUser(String userName) {
+        return new User(userName, "oooo");
     }
 }
